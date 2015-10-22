@@ -143,3 +143,13 @@ Make sure you've [signed the CLA](https://code.facebook.com/cla) before sending 
 Facebook has a [bounty program](https://www.facebook.com/whitehat/) for
 the safe disclosure of security bugs. If you find a vulnerability, please
 go through the process outlined on that page and do not file a public issue.
+
+#### for China
+ for some resion https://googlemock.googlecode.com we connot visit  so when the building task download https://googlemock.googlecode.com/files/gmock-1.7.0.zip will be fail, and the task give your an error.
+ just change some to suite it
+ > run commands as this suggest , until get the request error
+ > edit deps.sh comment line 118 clone from github
+ > go to wangle/wangle , edit CMakeLists.txt line 100, this line is the original. so just change to where you can download
+ > for this we could be build, but test cannot be pass. because some test check will be download gmock-1.7.0.zip from google, so we need also change this
+ > go to lib/test edit Makefile.am file change line 6 to where you can download
+ > for this, you will be install proxygen
